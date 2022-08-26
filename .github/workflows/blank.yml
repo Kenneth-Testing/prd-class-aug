@@ -108,11 +108,11 @@ jobs:
         mvn deploy --file check-in-app/pom.xml -DmuleDeploy \
         -Dap.clientid=${{ secrets.AP_CLIENT_ID }} \
         -Dap.clientsecret=${{ secrets.AP_CLIENT_SECRET }} \
-        -DbusinessGroupId="f8bd766c-a4e4-4395-8014-788f539efdbb" \
+        -DbusinessGroupId=${{ secrets.BUSINESS_GROUP_ID }} \
         -DapplicationName="checkin-git-26aug-kk" \
         -Denvironment="dev" \
         -Dapi.id="18086607" \
-        -Dencrypt.key="secure12345" \
+        -Dencrypt.key="${{ secrets.ENCRYPT_KEY }}" \
         -Dclient_id="f69087f3469b4d4e9384d2d194b8740d" \
         -Dclient_secret="C3197A29Ae6d4b8EaDC8B49b6C7256a8" 
         
